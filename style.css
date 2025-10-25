@@ -1,0 +1,149 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap'); */
+
+body {
+  font-family: Roboto, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 1em;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+header {
+  background-color: #87ceeb; /* sky blue */
+  padding: 2em 0; /* remove left and right padding */
+  text-align: center;
+}
+
+header figure {
+  margin: 0 auto; /* center the figure */
+  max-width: 100%; /* make the figure responsive */
+  padding: 0; /* remove padding */
+}
+
+header figure img {
+  width: 100%; /* make the image responsive */
+  height: auto; /* maintain aspect ratio */
+  border-radius: 10px; /* add a rounded corner effect */
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #666;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #999;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+figure {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+main {
+  display: block;
+  margin: 2em auto; /* add margin to the main element */
+  padding: 2em; /* add padding to the main element */
+  max-width: 800px; /* set a maximum width for the main element */
+  background-color: #f9f9f9; /* add a light gray background color */
+  border: 1px solid #ddd; /* add a light gray border */
+  border-radius: 10px; /* add a rounded corner effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle shadow effect */
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #666;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  clear: both;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer li {
+  margin-right: 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 1em;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+
+.social-media {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.social-media i {
+  margin-right: 10px;
+}
