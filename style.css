@@ -1,75 +1,157 @@
-/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap'); */
+:root {
+  --large-tablet: 1024px;
+  --container-width: 0.9;
+  --root-font-size: 16px;
+  --border-thickness: calc((1 / 16) * 1rem);
+  --border-radius: calc(((10 / 16) * 1rem));
+  --bg-color: #87ceeb;
+  --nav-bg-color: #333;
+  --nav-color: #f0f0f0;
+  --nav-active-color: #eef;
+  --footer-bg-color: #333;
+  --footer-color: #ccc;
+  --footer-hover-color: #eee;
+  --header-bg-color: #056ec1;
+  --header-color: white;
+  --h2-color: #666;
+  --h3-color: #333;
+}
 
 body {
-  font-family: Roboto, Tahoma, sans-serif;
-  font-size: 16px;
+  font:
+    var(--root-font-size) Roboto,
+    Tahoma,
+    sans-serif;
   line-height: 1.5;
   margin: 0;
   padding: 0;
-}
-nav {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.2em;
+  background-color: var(--bg-color);
 }
 
-nav ul {
-  list-style: none;
+/* reset defaults */
+figure {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: space-between;
 }
 
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  font-size: 1em;
-}
-
-nav a:hover {
-  color: #ccc;
-}
-
-header {
-  background-color: #87ceeb; /* sky blue */
-  padding: 2em 0; /* remove left and right padding */
+.navbar {
+  margin: 0 auto 2rem auto;
+  background-color: var(--nav-bg-color);
+  color: var(--nav-color);
+  padding: 1rem 2rem;
   text-align: center;
+  font-size: 1.2rem;
+  border-left: var(--border-thickness) solid black;
+  border-right: var(--border-thickness) solid black;
+  border-bottom: var(--border-thickness) solid black;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  .collapse {
+    /* align menu items to the right */
+    flex-grow: 0;
+  }
+  .navbar-brand {
+    color: var(--nav-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  /* ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    li {
+      margin-right: 1.25rem;
+    }
+    li:last-child {
+      margin-right: 0;
+    }
+  } */
+  .nav-link {
+    color: var(--nav-color);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    &:hover {
+      color: #ccc;
+      transition: color 0.2s ease;
+    }
+    &.active {
+      color: var(--nav-active-color);
+      border: 1px solid var(--nav-active-color);
+      border-radius: var(--border-radius);
+    }
+  }
 }
 
-header figure {
-  margin: 0 auto; /* center the figure */
-  max-width: 100%; /* make the figure responsive */
-  padding: 0; /* remove padding */
+/* Add scroll margin so links scroll to the top of the section */
+#home,
+#about,
+#contact {
+  /* Adjust this value to match your fixed navbar's height */
+  scroll-margin-top: 6rem;
 }
 
-header figure img {
-  width: 100%; /* make the image responsive */
-  height: auto; /* maintain aspect ratio */
-  border-radius: 10px; /* add a rounded corner effect */
+.page-header {
+  background-color: var(--header-bg-color);
+  border-radius: var(--border-radius);
+  margin: 6rem auto 1rem auto;
+  color: white;
+  padding: 2rem 0 0 0; /* remove left and right padding */
+  text-align: center;
+  p {
+    font-size: 1.5rem;
+  }
+  figure {
+    margin: 0 auto 1rem 0; /* center the figure */
+    max-width: 100%; /* make the figure responsive */
+    width: 100%; /* make the figure responsive */
+    padding: 1rem 0 0 0; /* remove padding */
+    img {
+      object-fit: cover;
+      width: 100%; /* make the image responsive */
+      height: auto; /* maintain aspect ratio */
+      border-radius: 0 0 10px 10px; /* add a rounded corner effect */
+    }
+    figcaption {
+      position: absolute;
+      bottom: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: var(--border-radius);
+      padding: 1.25rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 0.15rem;
+      text-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+    }
+  }
 }
 
 h2 {
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 0.5em;
-  color: #666;
+  color: var(--h2-color);
 }
 
 h3 {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.5em;
-  color: #999;
+  color: var(--h3-color);
 }
 
+main.container,
+header.container {
+  padding-left: 0;
+  padding-right: 0;
+}
 p {
   font-size: 1em;
   margin-bottom: 1em;
@@ -80,70 +162,67 @@ figure {
   padding: 0;
 }
 
-figcaption {
-  position: absolute;
-  bottom: 2em;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-main {
+article {
   display: block;
-  margin: 2em auto; /* add margin to the main element */
-  padding: 2em; /* add padding to the main element */
-  max-width: 800px; /* set a maximum width for the main element */
+  margin: 1.5em auto; /* add margin to the main element */
+  padding: 2rem; /* add padding to the main element */
   background-color: #f9f9f9; /* add a light gray background color */
   border: 1px solid #ddd; /* add a light gray border */
-  border-radius: 10px; /* add a rounded corner effect */
+  border-radius: var(--border-radius); /* add a rounded corner effect */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle shadow effect */
 }
 
-h2 {
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-  color: #666;
+.about figure {
+  margin: 0 auto;
+  img {
+    object-fit: cover;
+    width: 100%; /* make the image responsive */
+    height: auto; /* maintain aspect ratio */
+    border-radius: 10px; /* add a rounded corner effect */
+  }
+  figcaption {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+  }
+  ul {
+    margin: 0;
+  }
 }
-footer {
+
+.page-footer {
   background-color: #333;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   color: #fff;
-  padding: 1rem;
+  padding: 2rem 0;
   text-align: center;
   clear: both;
-}
-
-footer ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-footer li {
-  margin-right: 20px;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  font-size: 1em;
-}
-
-footer a:hover {
-  color: #ccc;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    li {
+      margin: 0;
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-size: 1em;
+      }
+      a:hover {
+        color: #ccc;
+      }
+    }
+  }
 }
 
 .social-media {
   font-size: 1.5em;
   margin-bottom: 0.5em;
-}
-
-.social-media i {
-  margin-right: 10px;
+  i {
+    margin-right: 0.5rem;
+  }
 }
